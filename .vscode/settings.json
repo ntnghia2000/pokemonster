@@ -67,5 +67,8 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "pokemonster.slnx"
+    "dotnet.defaultSolution": "pokemonster.slnx",
+    "cSpell.words": [
+        "Behaviour"
+    ]
 }

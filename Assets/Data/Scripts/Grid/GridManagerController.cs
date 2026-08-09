@@ -16,4 +16,9 @@ public class GridManagerController : BaseMonoBehaviour
         if (instance != null) return;
         instance = this;
     }
+
+    public BlockSpawner GetBlockSpawner()
+    {
+        return this.blockSpawner;
+    }
 }

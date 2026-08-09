@@ -10,12 +10,17 @@ public abstract class GridAbstract : BaseMonoBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.GetGridManagerController();
+        this.SetGridManagerController();
     }
 
-    private void GetGridManagerController()
+    private void SetGridManagerController()
     {
         if (this.gridController != null) return;
         this.gridController = transform.GetComponent<GridManagerController>();
+    }
+
+    public GridManagerController GetGridManagerController()
+    {
+        return this.gridController;
     }
 }

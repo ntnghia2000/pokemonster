@@ -69,6 +69,8 @@
     },
     "dotnet.defaultSolution": "pokemonster.slnx",
     "cSpell.words": [
-        "Behaviour"
+        "Behaviour",
+        "poket",
+        "Scriptable"
     ]
 }

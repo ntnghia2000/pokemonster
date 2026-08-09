@@ -296,6 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 587128319}
+  - component: {fileID: 587128320}
   m_Layer: 0
   m_Name: BlockSpawner
   m_TagString: Untagged
@@ -319,6 +320,24 @@ Transform:
   - {fileID: 539380372}
   m_Father: {fileID: 1962971002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &587128320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587128318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e94e0a3356a44fd8e37bfaceaa187a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockSpawner
+  holder: {fileID: 539380372}
+  spawnedCount: 0
+  prefabs:
+  - {fileID: 2557494845230618432, guid: 6ffc988df17cc4680b49701cf3071f74, type: 3}
+  poolObjs: []
+  poketNodeSprite: {fileID: 11400000, guid: cc07260dcbc0f48d3b9d168a0c908c43, type: 2}
 --- !u!1 &1962971001
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc2f71d592954d148909ff33650ff47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManagerController
-  blockSpawner: {fileID: 0}
+  blockSpawner: {fileID: 587128320}
 --- !u!114 &1962971004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241b72f8aba1f4de692dbf05a1c2844d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridSystem
-  gridController: {fileID: 0}
+  gridController: {fileID: 1962971003}
   width: 18
   height: 11
   offsetX: 0.2

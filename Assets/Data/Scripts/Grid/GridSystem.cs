@@ -14,6 +14,9 @@ public class GridSystem : GridAbstract
     private float offsetX = 0.2f;
 
     [SerializeField]
+    private float offsetY = 0.2f;
+
+    [SerializeField]
     private List<Node> nodes;
 
     protected override void LoadComponents()
@@ -40,6 +43,7 @@ public class GridSystem : GridAbstract
                     col = col,
                     row = row,
                     posX = col - (this.offsetX * col),
+                    posY = row - (this.offsetY * row),
                 };
                 this.nodes.Add(node);
             }
@@ -58,7 +62,7 @@ public class GridSystem : GridAbstract
             if (node.row == this.height - 1) continue;
 
             pos.x = node.posX;
-            pos.y = node.row;
+            pos.y = node.posY;
             Transform poketBlock = this.GetGridManagerController().GetBlockSpawner().Spawn(BlockSpawner.BLOCK, pos, Quaternion.identity);
             poketBlock.gameObject.SetActive(true);
         }

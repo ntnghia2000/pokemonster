@@ -23,6 +23,9 @@ public class GridSystem : GridAbstract
     private List<Node> nodes;
 
     [SerializeField]
+    private Node[,] nodeMatrix;
+
+    [SerializeField]
     private List<int> nodeIds;
 
     [SerializeField] 
@@ -45,7 +48,9 @@ public class GridSystem : GridAbstract
     {
         if (this.nodes.Count > 0) return;
 
+        this.nodeMatrix = new Node[this.width, this.height];
         int currentId = 0;
+
         for (int col = 0; col < this.width; col++)
         {
             for (int row = 0; row < this.height; row++)
@@ -60,6 +65,7 @@ public class GridSystem : GridAbstract
                 };
                 this.nodes.Add(node);
                 this.nodeIds.Add(currentId);
+                this.nodeMatrix[col, row] = node;
                 currentId++;
             }
         }
@@ -69,7 +75,7 @@ public class GridSystem : GridAbstract
     {
         Vector3 pos = Vector3.zero;
 
-        foreach(Sprite sprite in this.nodeProfile.sprites)
+        foreach (Sprite sprite in this.nodeProfile.sprites)
         {
             for (int i = 0; i < this.piecesAmount; i++)
             {
@@ -92,6 +98,25 @@ public class GridSystem : GridAbstract
     {
         node.occupied = true;
         node.blockPlaced = true;
+    }
+
+    protected virtual void SetNodeNeighbors()
+    {
+        int x, y;
+        foreach (Node node in this.nodes)
+        {
+            x = node.col;
+            y = node.row;
+            node.up = this.GetNodeByMatrix(x, y + 1);
+            node.right = this.GetNodeByMatrix(x + 1, y);
+            node.down = this.GetNodeByMatrix(x, y - 1);
+            node.left = this.GetNodeByMatrix(x - 1, y);
+        }
+    }
+
+    protected virtual Node GetNodeByMatrix(int col, int row)
+    {
+        return this.nodeMatrix[col, row];
     }
 
     protected virtual Node GetRandomNode()

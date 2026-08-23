@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class NodeController : MonoBehaviour
@@ -10,6 +11,7 @@ public class NodeController : MonoBehaviour
     protected Sprite sprite;
 
     public Node nodeData;
+    public List<NodeController> neighbors = new List<NodeController>();
 
     public virtual void SetSprite(Sprite sprite)
     {

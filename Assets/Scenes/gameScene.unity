@@ -402,10 +402,11 @@ MonoBehaviour:
   height: 11
   offsetX: 0.6
   offsetY: 0.5
-  piecesAmount: 11
+  piecesAmount: 4
   nodes: []
   nodeIds: 
   nodeProfile: {fileID: 11400000, guid: cc07260dcbc0f48d3b9d168a0c908c43, type: 2}
+  nodeControllers: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -10,9 +10,10 @@ public class Node
     public float posY = 0;
     public int nodeId = 0;
     public bool occupied = false;
+    public bool blockPlaced = false;
     public Node up;
     public Node down;
     public Node left;
     public Node right;
-    public NodeController nodeController;
+    // public NodeController nodeController;
 }

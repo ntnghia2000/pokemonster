@@ -100,6 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2557494845230618432}
+  - component: {fileID: 8764108490658821792}
   m_Layer: 0
   m_Name: NodePrefab
   m_TagString: Untagged
@@ -123,3 +124,17 @@ Transform:
   - {fileID: 7998770596621724365}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8764108490658821792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6999062544374645618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c20bbe8343a24e06a9f6c61dfe838c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeController
+  spriteRender: {fileID: 9148848163618210535}
+  sprite: {fileID: 0}

@@ -28,6 +28,8 @@ public class GridSystem : GridAbstract
     [SerializeField] 
     protected PoketNode nodeProfile;
 
+    public List<NodeController> nodeControllers;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -36,7 +38,7 @@ public class GridSystem : GridAbstract
 
     protected override void Start()
     {
-        this.SpawnBlock();
+        this.SpawnNodes();
     }
 
     private void InitGridSystem()
@@ -76,27 +78,19 @@ public class GridSystem : GridAbstract
                 pos.y = node.posY;
                 Transform poketBlock = this.GetGridManagerController().GetBlockSpawner().Spawn(BlockSpawner.BLOCK, pos, Quaternion.identity);
                 NodeController nodeController = poketBlock.GetComponent<NodeController>();
+                nodeController.SetSprite(sprite);
+                nodeController.SetNodeData(node);
                 poketBlock.gameObject.SetActive(true);
+                this.nodeControllers.Add(nodeController);
+                this.NodeOccupied(node);
             }
         }
     }
 
-    protected virtual void SpawnBlock()
+    public virtual void NodeOccupied(Node node)
     {
-        Vector3 pos = Vector3.zero;
-
-        foreach(Node node in this.nodes)
-        {
-            if (node.col == 0) continue;
-            if (node.row == 0) continue;
-            if (node.col == this.width - 1) continue;
-            if (node.row == this.height - 1) continue;
-
-            pos.x = node.posX;
-            pos.y = node.posY;
-            Transform poketBlock = GetGridManagerController().GetBlockSpawner().Spawn(BlockSpawner.BLOCK, pos, Quaternion.identity);
-            poketBlock.gameObject.SetActive(true);
-        }
+        node.occupied = true;
+        node.blockPlaced = true;
     }
 
     protected virtual Node GetRandomNode()

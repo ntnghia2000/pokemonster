@@ -6,5 +6,5 @@ public class BlockSpawner : Spawner
     private static BlockSpawner instance;
     public static BlockSpawner Instance => instance;
 
-    public static string BLOCK = "BlockPrefab";
+    public static string BLOCK = "NodePrefab";
 }

@@ -8,9 +8,11 @@ public class Node
     public int row = 0;
     public float posX = 0;
     public float posY = 0;
+    public int nodeId = 0;
     public bool occupied = false;
     public Node up;
     public Node down;
     public Node left;
     public Node right;
+    public NodeController nodeController;
 }

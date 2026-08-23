@@ -15,5 +15,5 @@ public class Node
     public Node down;
     public Node left;
     public Node right;
-    // public NodeController nodeController;
+    public NodeController nodeController;
 }

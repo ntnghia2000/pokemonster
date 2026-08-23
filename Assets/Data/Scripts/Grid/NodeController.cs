@@ -9,7 +9,7 @@ public class NodeController : MonoBehaviour
     [SerializeField] 
     protected Sprite sprite;
 
-    protected Node nodeData;
+    public Node nodeData;
 
     public virtual void SetSprite(Sprite sprite)
     {

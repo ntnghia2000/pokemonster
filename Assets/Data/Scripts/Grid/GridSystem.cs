@@ -82,6 +82,7 @@ public class GridSystem : GridAbstract
                 nodeController.SetNodeData(node);
                 poketBlock.gameObject.SetActive(true);
                 this.nodeControllers.Add(nodeController);
+                node.nodeController = nodeController;
                 this.NodeOccupied(node);
             }
         }
